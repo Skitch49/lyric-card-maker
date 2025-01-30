@@ -28,7 +28,7 @@
               [value]="'lyricsText' + $index + 1"
               maxlength="45"
             />
-            <span contentEditable>{{ getFormControl($index).value }}</span>
+            <span>{{ getFormControl($index).value }}</span>
           </div>
           }
         </div>
@@ -39,7 +39,8 @@
             [value]="artistText"
             formControlName="artiste"
             [style.backgroundColor]="color"
-            maxlength="40"
+            maxlength="35"
+    
           />
 
           <svg
