@@ -1,0 +1,209 @@
+.wrapper-card {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  h1 {
+    font-size: 2rem;
+    width: 100%;
+    text-align: center;
+    margin-top: 2rem;
+    
+  
+  }
+  p{
+    margin-top: 12px;
+    margin-bottom: 2rem;
+  }
+  .container-card {
+    display: flex;
+    flex-direction: column;
+
+    .card {
+      position: relative;
+      background-repeat: no-repeat;
+      background-position: center -40px;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      width: 500px;
+      aspect-ratio: 1;
+      transition: all 0.2s ease-in-out;
+
+      .input-file {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-25%, -50%);
+        &::file-selector-button {
+          display: block;
+          margin-bottom: 6px;
+        }
+      }
+      .lyrics {
+        gap: 7px;
+        margin-bottom: 35px;
+        margin-left: 26px;
+        max-width: calc(100% - 10px);
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        transition: margin 0.2s ease-in-out;
+        max-width: calc(100% - 26px);
+
+        .wrapper-lyric {
+          display: flex;
+          flex-direction: column;
+
+          position: relative;
+
+          color: black;
+          display: flex;
+          span,
+          input {
+            font-family: system-ui;
+            font-size: 24px;
+            padding: 3px 4px;
+            padding-top: 0px;
+            transition: all 0.2s ease-in-out;
+          }
+          input {
+            outline: none;
+            border: none;
+            z-index: 1;
+            background: transparent;
+          }
+          span {
+            position: absolute;
+            background-color: white;
+            height: -webkit-fill-available;
+            width: max-content;
+            max-width: 100%;
+          }
+        }
+      }
+      footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 24px;
+        color: white;
+        border-top: 1px solid white;
+        transition: padding 0.2s ease-in-out;
+
+        .artist {
+          text-transform: uppercase;
+          outline: none;
+          color: white;
+          border: none;
+          width: 100%;
+          font-size: 18px;
+          font-family: system-ui;
+          transition: font-size 0.2s ease-in-out;
+        }
+        svg {
+          width: 9rem;
+        }
+      }
+    }
+  }
+  .wrapper-btn {
+    margin: 2rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+
+    .btn {
+      user-select: none;
+      display: block;
+      width: 200px;
+      height: 40px;
+      line-height: 40px;
+      font-size: 18px;
+      font-family: sans-serif;
+      text-decoration: none;
+      color: #333;
+      border: 2px solid #333;
+      letter-spacing: 2px;
+      text-align: center;
+      position: relative;
+      transition: all 0.35s;
+      cursor: pointer;
+      &::after {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background: #333;
+        transition: all 0.35s;
+      }
+      &:hover {
+        color: #fff;
+      }
+      &:hover::after {
+        width: 100%;
+      }
+      & span {
+        position: relative;
+        z-index: 2;
+      }
+    }
+  }
+label{
+  display: flex;
+  flex-direction:  column;
+  align-items: center;
+  font-size: 18px;
+  padding: 8px;
+  .input-color {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    &::-webkit-color-swatch {
+      border-radius: 15px;
+      border: none;
+    }
+    &::-moz-color-swatch {
+      border-radius: 15px;
+      border: none;
+    }
+  }
+}
+}
+@media screen and (max-width: 500px) {
+  .card {
+    width: 100vw !important;
+  }
+  .lyrics{
+    margin-left: 5vw!important;
+    margin-bottom: 7vw!important;
+    input,span{
+      font-size: 4.8vw!important;
+    }
+  }
+  .artist{
+    font-size: 3.6vw!important;
+  }
+  svg{
+    width: 29vw!important;
+  }
+  footer{
+    padding: 4vw 4.9vw !important;
+  }
+}
+@media screen and (max-width: 450px) {
+  .wrapper-btn{
+    flex-direction: column;
+    gap: 12px!important;
+    margin-bottom: 1rem!important;
+  }
+}
